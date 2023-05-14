@@ -1,8 +1,9 @@
 public class LinearSearch {
     private LinearSearch() {}
-    public static int search(int[] data, int target) {
+
+    public static <E> int search(E[] data, E target) {
         for (int i = 0; i < data.length; ++i) {
-            if (data[i] == target) {
+            if (data[i].equals(target)) {
                 return i;
             }
         }
@@ -11,9 +12,12 @@ public class LinearSearch {
     }
 
     public static void main(String[] args) {
-        int[] data = {24, 18, 12, 9, 32, 4};
+        Integer[] data = {24, 18, 12, 9, 32, 4};
 
-        int res = LinearSearch.search(data, 122);
+        int res = LinearSearch.search(data, 12);
         System.out.println(res);
+
+        int res2 = LinearSearch.search(data, 122);
+        System.out.println(res2);
     }
 }
