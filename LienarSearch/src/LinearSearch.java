@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+
 public class LinearSearch {
     private LinearSearch() {}
 
@@ -25,5 +27,16 @@ public class LinearSearch {
 
         int res3 = LinearSearch.search(students, me);
         System.out.println(res3);
+
+        // code below is for algorithm efficiency test
+        int n = 1000000;
+        Integer[] testData = ArrayGenerator.generateOrderedArray(n);
+
+        long start = System.nanoTime();
+        LinearSearch.search(testData, n);
+        long end = System.nanoTime();
+
+        double time = (end - start) / 1000000000.0; // convert nano sec to sec
+        System.out.println(time + "s");
     }
 }
