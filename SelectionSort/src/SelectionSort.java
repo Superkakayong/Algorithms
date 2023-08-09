@@ -25,14 +25,19 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        Integer[] arr = {1, 4, 2, 3, 6, 5};
+        int n = 10000;
+        Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
 
+        long startTime = System.nanoTime();
         SelectionSort.sort(arr);
+        long endTime = System.nanoTime();
 
-        for (int e : arr) {
-            System.out.println(e + " ");
-        }
+        double time = (endTime - startTime) / 1000000000.0;
 
-        System.out.println();
+//        for (int e : arr) {
+//            System.out.println(e + " ");
+//        }
+
+        System.out.println(time + "s");
     }
 }
