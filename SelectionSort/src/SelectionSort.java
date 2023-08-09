@@ -26,18 +26,8 @@ public class SelectionSort {
 
     public static void main(String[] args) {
         int n = 10000;
-        Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
+        Integer[] arr = ArrayGenerator.generateRandomArray(3, 3);
 
-        long startTime = System.nanoTime();
-        SelectionSort.sort(arr);
-        long endTime = System.nanoTime();
-
-        double time = (endTime - startTime) / 1000000000.0;
-
-//        for (int e : arr) {
-//            System.out.println(e + " ");
-//        }
-
-        System.out.println(time + "s");
+        SortingHelper.sortTest("SelectionSort", arr);
     }
 }
