@@ -25,9 +25,11 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        int n = 10000;
-        Integer[] arr = ArrayGenerator.generateRandomArray(3, 3);
+        int[] dataSize = {10000, 100000};
 
-        SortingHelper.sortTest("SelectionSort", arr);
+        for (int n : dataSize) {
+            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
+            SortingHelper.sortTest("SelectionSort", arr);
+        }
     }
 }
